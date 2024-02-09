@@ -49,34 +49,18 @@ print("Size of Test Set:", X_test.shape[0])
 
 # Build the regression model with one-hot encoded input
 def build_regression_model(max_seq_length, vocab_size):
-<<<<<<< HEAD
-    inputs = tf.keras.Input(shape=(max_seq_length, vocab_size), dtype=tf.float32)
 
-    #x = layers.Embedding(input_dim=vocab_size,
-    #                     output_dim=2,
-    #                     input_length=max_seq_length)(inputs)
-=======
     inputs = tf.keras.Input(shape=(max_seq_length, vocab_size), batch_size=32, dtype=tf.float32)
 
     #x = layers.Embedding(input_dim=vocab_size + 1,
     #                     output_dim=4,
     #                    input_length=max_seq_length)(inputs)
 
->>>>>>> 52b0a76 (update model and add peptide dataset to repo)
     # Flatten the one-hot encoded sequences
     x = layers.Flatten()(inputs)
     #x = layers.Flatten()(x)
 
     # Dense layers with dropout and regularization
-<<<<<<< HEAD
-    x = layers.Dense(units=512, activation='relu', kernel_regularizer=tf.keras.regularizers.l2(0.01))(x)
-    x = layers.Dropout(0.2)(x)
-
-    x = layers.Dense(units=128, activation='relu')(x)
-    x = layers.Dropout(0.2)(x)
-
-    x = layers.Dense(units=64, activation='relu')(x)
-=======
     x = layers.Dense(units=512, activation='relu', kernel_regularizer=tf.keras.regularizers.l2(0.1))(x)
     x = layers.Dropout(0.4)(x)
 
@@ -84,8 +68,6 @@ def build_regression_model(max_seq_length, vocab_size):
     x = layers.Dropout(0.2)(x)
 
     x = layers.Dense(units=128, activation='relu')(x)
->>>>>>> 52b0a76 (update model and add peptide dataset to repo)
-
 
     # Output layer for regression
     outputs = layers.Dense(units=1, activation="linear")(x)
