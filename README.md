@@ -24,20 +24,20 @@ pip install -r requirements.txt
 The dataset used for training the model is stored in the file HumanPlasma2023-04.csv. It contains amino acid sequences and corresponding hydrophobicity values.
 
 ## Usage
-# Clone the repository:
+1. Clone the repository:
 
 ```bash
-git clone https://github.com/your-username/hydrophobicity-prediction.git
-cd hydrophobicity-prediction
+git clone https://github.com/sohamazing/peptide.git
+cd peptide
 ```
 
-# Install dependencies:
+2. Install dependencies:
 
 ```bash
 pip install -r requirements.txt
 ```
 
-# Run the script:
+3. Run the script:
 ```bash
 python3 hydrophobicity.py
 ```
